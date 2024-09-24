@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	user-select: none;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2vmin;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	background-color: #12bdac;
+}
+
+.board {
+	display: grid;
+	grid-template-columns: repeat(3, 20vmin);
+	grid-template-rows: repeat(3, 20vmin);
+	gap: 2vmin;
+	background-color: #0ca192;
+}
+
+.cell {
+	position: relative;
+	cursor: pointer;
+	background-color: #12bdac;
+}
+
+.cell.x::before,
+.cell.x::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 15vmin;
+	height: 2vmin;
+	background-color: #545454;
+}
+
+.cell.x::before {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+.cell.x::after {
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+.cell.o::before,
+.cell.o::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 14vmin;
+	height: 14vmin;
+	border-radius: 50%;
+	border: 2vmin solid #f2ebd3;
+}
+
+.message {
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 4vmin;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #f2ebd3;
+}
+
+.total-score {
+	display: flex;
+	gap: 40px;
+	color: #f2ebd3;
+	font-size: 40px;
+}
+
+.score {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 7px 80px;
+	border-radius: 10px;
+	border: 3px solid #0ca192;
+	font-family: inherit;
+}
+
+.restart-btn {
+	border: 3px solid #f2ebd3;
+	background-color: #0ca192;
+	border-radius: 5px;
+	padding: 10px 30px;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: 600;
+	cursor: pointer;
+	color: #f2ebd3;
+}
